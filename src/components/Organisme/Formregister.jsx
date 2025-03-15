@@ -27,8 +27,8 @@ const Formregister = () => {
       </div>
       <Lupapass children="Lupa Password?"/>
       <div className='box-submit'>
-        <Buttonvsatu kelasdiv="input-box" kelastombol="masuk" typebutton="submit" klik={() => klik('/login')}> <Link to="/login">Daftar</Link></Buttonvsatu>
-        <Buttonvsatu kelasdiv="input-box" kelastombol="daftar" typebutton="submit" klik={() => klik('/login')}><Link to="/login">Masuk</Link></Buttonvsatu>
+        <Buttonvsatu kelasdiv="input-box" kelastombol="regis" typebutton="submit" klik={() => klik('/login')}> <Link to="/login">Daftar</Link></Buttonvsatu>
+        <Buttonvsatu kelasdiv="input-box" kelastombol="punya" typebutton="submit" klik={() => klik('/login')}><Link to="/login">Masuk</Link></Buttonvsatu>
       </div>
       <Atau children="atau" />
       <div className='social'>
