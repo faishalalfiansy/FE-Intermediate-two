@@ -26,7 +26,7 @@ const Formlogin = () => {
       <Lupapass children="Lupa Password?" />
       <div className="box-submit">
         <Buttonvsatu kelasdiv="input-box masuk" kelastombol="masuk" typebutton="submit" klik={() => klik("/beranda")}>
-          Masuk
+          <Link to="/beranda">Masuk</Link>
         </Buttonvsatu>
         <Buttonvsatu kelasdiv="input-box daftar" kelastombol="daftar" typebutton="submit" klik={() => klik("/register")}>
           <Link to="/register">Daftar</Link>

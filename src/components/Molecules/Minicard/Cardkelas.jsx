@@ -7,7 +7,7 @@ import Binsetengah from "/src/assets/image/setengah-star.png"
 import Binkosong from "/src/assets/image/kosong-star.png"
 
 const Cardkelas = (props) => {
-  const { sumber, childrenone } = props;
+  const { sumber, judulKelas, deskripsi } = props;
   return (
     
       <section className="card">
@@ -15,8 +15,8 @@ const Cardkelas = (props) => {
         <section className="card-content">
           <Miniatasone
             kls="card-isi"
-            childrenone={childrenone}
-            childrentwo="Mulai transformasi dengan instruktur Profesional, harga yang terjangkau, dan terpercaya"
+            childrenone={judulKelas}
+            childrentwo={deskripsi}
           />
           <Miniatastwo sumber={instruk} />
         </section>
@@ -27,8 +27,8 @@ const Cardkelas = (props) => {
           bintang3={Binfull}
           bintang4={Binsetengah}
           bintang5={Binkosong}
-          children1="4.5(86)"
-          children2="Rp 300K"
+          rating="4.5(86)"
+          harga="Rp 300K"
         />
         </section>
       </section>

@@ -1,5 +1,5 @@
 const Minibawah = (props) => {
-  const { bintang1, bintang2, bintang3, bintang4, bintang5, children1, children2 } = props;
+  const { bintang1, bintang2, bintang3, bintang4, bintang5, rating, harga } = props;
   return (
     <>
       <section className="rating">
@@ -20,10 +20,10 @@ const Minibawah = (props) => {
             <img src={bintang5} alt="" />
           </li>
         </section>
-        <p>{children1}</p>
+        <p>{rating}</p>
       </section>
       <section className="harga">
-        <h3>{children2}</h3>
+        <h3>{harga}</h3>
       </section>
     </>
   );

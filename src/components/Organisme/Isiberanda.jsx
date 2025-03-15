@@ -1,15 +1,8 @@
 import Cardkelas from "/src/components/Molecules/Minicard/Cardkelas";
 import Hero from "/src/components/Molecules/Minicard/Hero";
 import Buttons from "/src/components/atom/Buttons";
-import Cardimg1 from "/src/assets/image/card1.jpg";
-import Cardimg2 from "/src/assets/image/card2.jpg";
-import Cardimg3 from "/src/assets/image/card3.jpg";
-import Cardimg4 from "/src/assets/image/card4.jpg";
-import Cardimg5 from "/src/assets/image/card5.jpg";
-import Cardimg6 from "/src/assets/image/card6.jpg";
-import Cardimg7 from "/src/assets/image/card7.jpg";
-import Cardimg8 from "/src/assets/image/card8.jpg";
-import Cardimg9 from "/src/assets/image/card9.jpg";
+
+import isiCard from "../Molecules/Minicard/IsiCard";
 const Isiberanda = () => {
   return (
     <div className="container">
@@ -40,42 +33,14 @@ const Isiberanda = () => {
         <a href=""className="sec-pilihan">Bisnis</a>
       </section>
       <div className="cardbatas">
-      <Cardkelas
-          sumber={Cardimg1}
-          childrenone="IT Fullstack Developer"
+        {isiCard.map((item) => (
+          <Cardkelas
+          key={item.id}
+          sumber={item.sumber}
+          judulKelas={item.judulKelas}
+          deskripsi={item.deskripsi}
         />
-        <Cardkelas
-          sumber={Cardimg2}
-          childrenone="UI/UX Designer"
-        />
-        <Cardkelas
-          sumber={Cardimg3}
-          childrenone="Pemasaran Digital"
-        />
-        <Cardkelas
-          sumber={Cardimg4}
-          childrenone="Pengembangan Diri"
-        />
-        <Cardkelas
-          sumber={Cardimg5}
-          childrenone="Bisnis Digital"
-        />
-        <Cardkelas
-          sumber={Cardimg6}
-          childrenone="Pemasaran Digital"
-        />
-        <Cardkelas
-          sumber={Cardimg7}
-          childrenone="Pengembangan Diri"
-        />
-        <Cardkelas
-          sumber={Cardimg8}
-          childrenone="Bisnis Digital"
-        />
-        <Cardkelas
-          sumber={Cardimg9}
-          childrenone="Pemasaran Digital"
-        />
+        ))}
       </div>
       
       <section className="news-image">
