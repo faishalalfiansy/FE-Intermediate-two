@@ -86,4 +86,18 @@ body{
   .burger{
       display: block;
   }
+  .sub-menu-wrap{
+    width: 46vh;
+    height: 26vh;
+    right: 0px;
+  }
+  .sub-menu-wrap hr{
+    display: none;
+  }
+  .sub-menu-wrap a{
+    font-size: 20px;
+  }
+  .subdiv{
+    margin-bottom: 25px;
+  }
 }

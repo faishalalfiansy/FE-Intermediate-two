@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '/src/components/Molecules/Navbar';
 import Ava from '/src/assets/image/Avatar.png'
 import Burger from '/src/assets/image/burgerIcon.png'
+import exit from '/src/assets/image/exit.png'
 
 const Navberanda = () => {
     // State untuk mengatur apakah menu dropdown terbuka atau tertutup
@@ -50,7 +51,7 @@ const Navberanda = () => {
               <hr />
               <div className='exit'>
                 <a href="">Keluar</a>
-                <img src="/src/assets/image/exit.png" alt="Exit" />
+                <img src={exit} alt="Exit" />
               </div>
             </div>
           )}

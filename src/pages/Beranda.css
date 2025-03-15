@@ -576,6 +576,9 @@
       width: 100%;
       height: 40px;
     }
+    .footer{
+      height: 400px;
+    }
     .container-footer{
       display: flex;
       flex-wrap: wrap;
@@ -585,7 +588,7 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      height: 260px;
+      height: 210px;
       gap: 10px;
     }
     .isi1-footer{
@@ -619,7 +622,7 @@
       align-items: normal;
       width: 100%;
       height: 91px;
-      gap: 5px;
+      gap: 10px;
     }
     .panah{
       display: block;
@@ -629,8 +632,7 @@
       left: 90%;
     }
     hr{
-      width: 320px;
-      margin-top: 20px;
+      display: none;
     }
     .icon-footer{
       width: 185px;
