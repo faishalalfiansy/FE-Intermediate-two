@@ -5,6 +5,7 @@ import Buttons from "/src/components/atom/Buttons";
 import isiCard from "../Molecules/Minicard/IsiCard";
 const Isiberanda = () => {
   return (
+    <>
     <div className="container">
       <section className="hero-image">
         <Hero
@@ -62,6 +63,7 @@ const Isiberanda = () => {
         </Hero>
       </section>
     </div>
+    </>
   );
 };
 

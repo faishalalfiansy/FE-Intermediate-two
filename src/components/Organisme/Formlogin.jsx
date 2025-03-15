@@ -14,6 +14,7 @@ const Formlogin = () => {
     navigate(path);
   };
   return (
+    <>
     <div className="body-input">
       <div className="box-input">
         <Inputan namaLabel="email" kelasinput="input-field" namaId="email" title="E-mail">
@@ -39,6 +40,7 @@ const Formlogin = () => {
         </Buttongo>
       </div>
     </div>
+    </>
   );
 };
 

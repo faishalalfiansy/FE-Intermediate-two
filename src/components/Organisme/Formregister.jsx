@@ -16,9 +16,10 @@ const Formregister = () => {
     navigate(path)
   }
     return (
+      <>
       <div className='body-input'>
       <div className='box-input'>
-        <Inputan namaLabel="email" kelasinput="input-field" namaId="nama" title="Nama Lengkap"><span>*</span></Inputan>
+        <Inputan namaLabel="email" kelasinput="input-field" namaId="nama" title="Nama Lengkap" name="nama"><span>*</span></Inputan>
         <Inputan namaLabel="email" kelasinput="input-field" namaId="email" title="E-mail"><span>*</span></Inputan>
         <Inputnomor sumber={Bendera} kelasimg="idn" nama="kode" idselect="kode"/>
         <Inputanpass namaLabel="password" kelasinput="input-field" namaId="password" title="Kata Sandi"><span>*</span></Inputanpass>
@@ -36,6 +37,7 @@ const Formregister = () => {
         </Buttongo>
       </div>
     </div>
+      </>
     )
 }
 
