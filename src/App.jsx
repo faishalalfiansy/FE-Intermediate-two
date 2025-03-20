@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Login from '/src/pages/Login'
 import Register from '/src/pages/Register'
 import Beranda from '/src/pages/Beranda'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Login />,
