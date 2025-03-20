@@ -1,7 +1,7 @@
 const Option = (props) => {
-    const { nama, idselect, children } = props
+    const {idselect, children } = props
     return (
-        <select name={nama} id={idselect}>
+        <select id={idselect}>
             {children}
         </select>
     )
