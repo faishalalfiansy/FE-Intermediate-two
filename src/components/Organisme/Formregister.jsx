@@ -20,6 +20,7 @@ const Formregister = () => {
     console.log(e.target.email.value);
     console.log(e.target.password.value);
     console.log(e.target.kode.value);
+    console.log(e.target.telfon.value);
   };
   const tologin = (path) => {
     navigate(path);
@@ -59,7 +60,7 @@ const Formregister = () => {
         // value={dataLogin.nohp}
         // onChange={handleChange}
         > 
-        <Input typeInput="text" kelasinput="input-nomor" namaId="telfon" name="kode" required/>  
+        <Input typeInput="text" kelasinput="input-nomor" namaId="telfon" name="telfon" title="telfon" required/>  
         </Inputnomor>
 
         <Inputanpass  

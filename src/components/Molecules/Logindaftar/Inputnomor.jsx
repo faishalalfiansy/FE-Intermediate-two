@@ -6,7 +6,7 @@ const Inputnomor = (props) => {
     return (
         <>
         <div className="konten-input1">
-            <Label htmlFor="nomor">No. Hp<span>*</span></Label>
+            <Label namaLabel="telfon" title="No. Hp"><span>*</span></Label>
         <div className="box-nomor">
             <div className="subone">
                 <Buttongo typebutton="submit" kelastombol="lkode" sumber={sumber} kelasimg={kelasimg} />
