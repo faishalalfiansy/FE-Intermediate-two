@@ -3,11 +3,12 @@ import Navbar from '/src/components/Molecules/Navbar';
 import Ava from '/src/assets/image/Avatar.png'
 import Burger from '/src/assets/image/burgerIcon.png'
 import exit from '/src/assets/image/exit.png'
+import { useNavigate } from 'react-router-dom';
 
 const Navberanda = () => {
     // State untuk mengatur apakah menu dropdown terbuka atau tertutup
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+    const navigate = useNavigate();
     // Fungsi untuk toggle menu dropdown
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
@@ -19,10 +20,8 @@ const Navberanda = () => {
         <Navbar>
           <div className='pilmenu'>
             <ul>
-              <li><a href="/beranda">Kategori</a></li>
+              <li><a href="#/kategori">Kategori</a></li>
             </ul>
-  
-            {/* Gambar Avatar, klik untuk toggle dropdown */}
             <img
               src={Ava}
               alt="Avatar"
@@ -31,10 +30,7 @@ const Navberanda = () => {
             />
           </div>
   
-          {/* Gambar menu burger */}
           <img src={Burger} alt="burger" onClick={toggleMenu} className='burger'/>
-  
-          {/* Menu dropdown, hanya tampil ketika isMenuOpen true */}
           {isMenuOpen && (
             <div className='sub-menu-wrap'>
               <div className='subdiv'>

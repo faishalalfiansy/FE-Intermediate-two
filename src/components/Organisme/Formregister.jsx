@@ -16,11 +16,8 @@ const Formregister = () => {
   
   const klik = (e) => {
     e.preventDefault();
-    console.log("daftar");
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
-    console.log(e.target.kode.value);
-    console.log(e.target.telfon.value);
+    
+    
   };
   const tologin = (path) => {
     navigate(path);
@@ -76,9 +73,9 @@ const Formregister = () => {
         </Inputanpass>
 
         <Inputanpass  
-        namaLabel="password"  
+        namaLabel="repassword"  
         kelasinput="input-field"  
-        namaId="passwordre"   
+        namaId="repassword"   
         title="Konfirmasi Kata Sandi" 
         name="repassword"  
         // value={dataLogin.repassword}
