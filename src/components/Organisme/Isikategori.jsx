@@ -2,14 +2,27 @@ import "/src/pages/Kategori.css";
 import Cardkelas from "/src/components/Molecules/Minicard/Cardkelas";
 import isiCard from "../Molecules/Minicard/IsiCard";
 import ImgBuku from "/src/assets/image/Notebook.png";
-import ImgArrow from "/src/assets/image/KeyboardArrowUp.png"
+import ImgArrow from "/src/assets/image/KeyboardArrowDown.png"
 import ImgBag from "/src/assets/image/Shopping_Bag_01.png"
 import ImgClock from "/src/assets/image/Clock.png"
 import ImgArrowU from "/src/assets/image/iconUrutkan.png"
 import Imgsearch from "/src/assets/image/Search.png"
 import ImgaArrowPage from "/src/assets/image/arrowpage.png"
+import { useState } from "react";
 
 const Isikategori = () => {
+    const [openDropdown, setOpenDropdown] = useState({
+        bidangStudi: false,
+        harga: false,
+        durasi: false,
+      });
+
+      const toggleDropdown = (key) => {
+        setOpenDropdown((prev) => ({
+          ...prev,
+          [key]: !prev[key],
+        }));
+      };
     return (
         <>
         <div className="container-kategori">
@@ -27,11 +40,12 @@ const Isikategori = () => {
             </div>
                 {/* bagian bidang studi */}
                 <div className="card-kategori">
-                    <div className="pil-kategori">
+                    <div className="pil-kategori" onClick={() => toggleDropdown("bidangStudi")}>
                     <img src={ImgBuku} alt="" />
                     <p>Bidang Studi</p>
-                    <img src={ImgArrow} alt="" />
+                    <img src={ImgArrow} alt="" className={openDropdown.bidangStudi ? "arrow-rotate" : ""} />
                     </div>
+                    {openDropdown.bidangStudi && (
                     <div className="pil-check">
                         <section className="check">
                         <input type="checkbox" id="pemasaran" name="pemasaran" />
@@ -54,16 +68,18 @@ const Isikategori = () => {
                         </section>
 
                     </div>
+                    )}
                 </div>
                 {/* bagian Harga */}
                 <div className="card-kategori">
-                    <div className="pil-kategori">
+                    <div className="pil-kategori" onClick={() => toggleDropdown("harga")}>
                     <img src={ImgBag} alt="" />
                     <p>Harga</p>
-                    <img src={ImgArrow} alt="" />
+                    <img src={ImgArrow} alt="" className={openDropdown.harga ? "arrow-rotate" : ""} />
                     </div>
+                    {openDropdown.harga && (
                     <div className="pil-check">
-                    <section className="check">
+                        <section className="check">
                         <input type="checkbox" id="pemasaranH" name="pemasaranH" />
                         <label htmlFor="pemasaranH">Pemasaran</label>
                         </section>
@@ -84,14 +100,16 @@ const Isikategori = () => {
                         </section>
 
                     </div>
+                    )}
                 </div>
                 {/* bagian Durasi */}
                 <div className="card-kategori">
-                    <div className="pil-kategori">
+                    <div className="pil-kategori" onClick={() => toggleDropdown("durasi")}>
                     <img src={ImgClock} alt="" />
                     <p>Durasi</p>
-                    <img src={ImgArrow} alt="" />
+                    <img src={ImgArrow} alt="" className={openDropdown.durasi ? "arrow-rotate" : ""} />
                     </div>
+                    {openDropdown.durasi && (
                     <div className="pil-check">
                         <section className="radio">
                         <input type="checkbox" id="empatjam" name="empatjam" />
@@ -109,6 +127,7 @@ const Isikategori = () => {
                         </section>
 
                     </div>
+                    )}
                 </div>
             </div>
             {/* akhir bagian filter */}
