@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Navbar from '/src/components/Molecules/Navbar';
 import Ava from '/src/assets/image/Avatar.png'
 import Burger from '/src/assets/image/burgerIcon.png'
@@ -6,9 +6,14 @@ import exit from '/src/assets/image/exit.png'
 import { useNavigate } from 'react-router-dom';
 
 const Navberanda = () => {
-    // State untuk mengatur apakah menu dropdown terbuka atau tertutup
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
+    const [isVisited, setIsVisited] = useState(false);
+
+    const handClick = () => {
+    setIsVisited(true);
+    };
     // Fungsi untuk toggle menu dropdown
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
@@ -20,7 +25,9 @@ const Navberanda = () => {
         <Navbar>
           <div className='pilmenu'>
             <ul>
-              <li><a href="#/kategori">Kategori</a></li>
+              <li><a href="#/kategori" onClick={handClick} className='kate'
+              style={{ color: isVisited ? "#1D2433" : "#3ECF4C"}}
+              >Kategori</a></li>
             </ul>
             <img
               src={Ava}

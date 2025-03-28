@@ -33,6 +33,14 @@ body{
   color: #494848;
 }
 
+/* .kate{
+  color: #1D2433;
+}
+
+.kate:active{
+  color: #3ECF4C;
+} */
+
 .navbar img{
   cursor: pointer;
 }
