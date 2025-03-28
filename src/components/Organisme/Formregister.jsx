@@ -9,32 +9,56 @@ import Input from "/src/components/atom/Input";
 import { useNavigate } from 'react-router-dom'
 import Logol from "/src/assets/image/logoGoogle.png";
 import Bendera from "/src/assets/image/logoIndonesia.png"
-import React,{ useState } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 
 const Formregister = () => {
   const navigate = useNavigate();
-  
-  const klik = (e) => {
-    e.preventDefault();
-    
-    
+
+  const [dataUser, setDataUser] = useState({
+    nama: "",
+    email: "",
+    password: "",
+    repassword: "",
+  });
+
+ 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDataUser({
+      ...dataUser,
+      [name]: value
+    })
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (dataUser.password !== dataUser.repassword) {
+      alert("Password tidak cocok!");
+      return;
+    }
+    localStorage.setItem("userData", JSON.stringify(dataUser));
+    alert("Registrasi berhasil!");
+
+  };
+  
   const tologin = (path) => {
     navigate(path);
   };
     return (
       <>
-      <form onSubmit={klik}>
       <div className='body-input'>
+      <form onSubmit={handleSubmit}>
       <div className='box-input'>
         <Inputan  
         namaLabel="email"  
         kelasinput="input-field"  
         namaId="nama"   
         title="Nama Lengkap"
-        name="nama"  
-        // value={dataLogin.nama}
-        // onChange={handleChange}   
+        namaE="nama"  
+        isiValue={dataUser.nama}
+        onChange={handleChange}  
         required>  
         <span>*</span>
         </Inputan>
@@ -43,9 +67,9 @@ const Formregister = () => {
         namaLabel="email"   
         kelasinput="input-field"  
         namaId="email" title="E-mail"
-        name="email"   
-        // value={dataLogin.email}
-        // onChange={handleChange}   
+        namaE="email"  
+        isiValue={dataUser.email}
+        onChange={handleChange}   
         required>  
         <span>*</span>  
         </Inputan>
@@ -54,10 +78,15 @@ const Formregister = () => {
         sumber={Bendera}  
         kelasimg="idn"    
         idselect="kode" 
-        // value={dataLogin.nohp}
-        // onChange={handleChange}
-        > 
-        <Input typeInput="text" kelasinput="input-nomor" namaId="telfon" name="telfon" title="telfon" required/>  
+        onChange={handleChange}> 
+        <Input typeInput="text" 
+        kelasinput="input-nomor" 
+        namaId="telfon"  
+        title="telfon" 
+        namaE="telfon"
+        isiValue={dataUser.telfon}
+        onChange={handleChange}
+        required/>  
         </Inputnomor>
 
         <Inputanpass  
@@ -65,9 +94,9 @@ const Formregister = () => {
         kelasinput="input-field"  
         namaId="password"   
         title="Kata Sandi" 
-        name="password" 
-        // value={dataLogin.password}
-        // onChange={handleChange}  
+        namaE="password"
+        isiValue={dataUser.password}
+        onChange={handleChange}  
         required> 
         <span>*</span>  
         </Inputanpass>
@@ -77,9 +106,9 @@ const Formregister = () => {
         kelasinput="input-field"  
         namaId="repassword"   
         title="Konfirmasi Kata Sandi" 
-        name="repassword"  
-        // value={dataLogin.repassword}
-        // onChange={handleChange}  
+        namaE="repassword"
+        isiValue={dataUser.repassword}
+        onChange={handleChange}  
         required> 
         <span>*</span>  
         </Inputanpass>
@@ -113,8 +142,9 @@ const Formregister = () => {
           <p>Daftar dengan Google</p>
         </Buttongo>
       </div>
+      </form>
     </div>
-    </form>
+    
       </>
     )
 }

@@ -1,8 +1,9 @@
 import Buttongo from "/src/components/Molecules/Logindaftar/Buttonimg";
 import Option from "/src/components/atom/Option";
 import Label from "/src/components/atom/Label";
+import React, { cloneElement } from "react";
 const Inputnomor = (props) => {
-    const { sumber,kelasimg, idselect, children} = props;
+    const { sumber,kelasimg, idselect, children, onChange} = props;
     return (
         <>
         <div className="konten-input1">
@@ -19,7 +20,7 @@ const Inputnomor = (props) => {
                 </Option>
             </div>
             <div className="subtree">
-               {children}
+                {children}
             </div>
         </div>
         </div>
