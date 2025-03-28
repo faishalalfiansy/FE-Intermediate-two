@@ -18,6 +18,7 @@ const Formregister = () => {
   const [dataUser, setDataUser] = useState({
     nama: "",
     email: "",
+    telfon: "",
     password: "",
     repassword: "",
   });
@@ -35,12 +36,35 @@ const Formregister = () => {
     e.preventDefault();
 
     if (dataUser.password !== dataUser.repassword) {
-      alert("Password tidak cocok!");
+      alert("Password tidak sama!");
       return;
-    }
-    localStorage.setItem("userData", JSON.stringify(dataUser));
-    alert("Registrasi berhasil!");
+    }else if (dataUser.password.length < 6) {
+      alert("Password minimal 6 karakter!");
+      return;
+    }else{
+      const users = JSON.parse(localStorage.getItem("users")) || [];
 
+      const emailExists = users.some((user) => user.email === dataUser.email);
+       if (emailExists) {
+        alert("Email sudah digunakan!");
+       return;
+      }
+      users.push({
+        nama: dataUser.nama,
+        email: dataUser.email,
+        telfon: dataUser.telfon,
+        password: dataUser.password,
+      });
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Registrasi berhasil!");
+      setDataUser({
+        nama: "",
+        email: "",
+        telfon: "",
+        password: "",
+        repassword: "",
+      });
+    }
   };
   
   const tologin = (path) => {
@@ -77,17 +101,13 @@ const Formregister = () => {
         <Inputnomor   
         sumber={Bendera}  
         kelasimg="idn"    
-        idselect="kode" 
-        onChange={handleChange}> 
-        <Input typeInput="text" 
+        idselect="kode"
         kelasinput="input-nomor" 
         namaId="telfon"  
         title="telfon" 
         namaE="telfon"
         isiValue={dataUser.telfon}
-        onChange={handleChange}
-        required/>  
-        </Inputnomor>
+        onChange={handleChange}/> 
 
         <Inputanpass  
         namaLabel="password"  
