@@ -7,10 +7,10 @@ import Binsetengah from "/src/assets/image/setengah-star.png"
 import Binkosong from "/src/assets/image/kosong-star.png"
 
 const Cardkelas = (props) => {
-  const { sumber, judulKelas, deskripsi } = props;
+  const { sumber, judulKelas, deskripsi, containerCard } = props;
   return (
     
-      <section className="card">
+      <section className={containerCard}>
         <img className="img-judul" src={sumber} alt="" />
         <section className="card-content">
           <Miniatasone

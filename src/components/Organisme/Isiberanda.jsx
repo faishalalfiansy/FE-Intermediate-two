@@ -36,6 +36,7 @@ const Isiberanda = () => {
       <div className="cardbatas">
         {isiCard.map((item) => (
           <Cardkelas
+          containerCard="card"
           key={item.id}
           sumber={item.sumber}
           judulKelas={item.judulKelas}

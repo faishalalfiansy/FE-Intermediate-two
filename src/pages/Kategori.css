@@ -246,7 +246,7 @@ input[type="checkbox"]:checked::before {
     gap: 20px;
   }
   
-  .card{
+  .card-kelas{
     width: 48%;
     height: 426px;
     background-color: #FFFFFF;

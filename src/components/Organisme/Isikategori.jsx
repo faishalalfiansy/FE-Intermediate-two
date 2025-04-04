@@ -146,6 +146,7 @@ const Isikategori = () => {
                 <div className="box-isiCardBeranda">
                     {isiCard.slice(0, 6).map((item) => (
                     <Cardkelas
+                    containerCard="card-kelas"
                     key={item.id}
                     sumber={item.sumber}
                     judulKelas={item.judulKelas}
