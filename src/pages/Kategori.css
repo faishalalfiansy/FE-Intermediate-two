@@ -425,7 +425,7 @@ input[type="checkbox"]:checked::before {
     width: 50%;
   }
 
-  .card{
+  .card-kelas{
     display: flex;
     flex-wrap: wrap;
     padding: 17px 17px 17px 17px;

@@ -137,6 +137,9 @@ const Isikategori = () => {
                 {/* bagian pencarian */}
                 <div className="box-pencarian">
                     <button>Urutkan <img src={ImgArrowU} alt="" /></button>
+                    <div className="urutkan">
+                        
+                    </div>
                     <input type="text" placeholder="Cari Kelas"/>
                     <img src={Imgsearch} alt="" />
                 </div>
