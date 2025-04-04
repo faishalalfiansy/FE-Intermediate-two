@@ -8,6 +8,7 @@ import ImgClock from "/src/assets/image/Clock.png"
 import ImgArrowU from "/src/assets/image/iconUrutkan.png"
 import Imgsearch from "/src/assets/image/Search.png"
 import ImgaArrowPage from "/src/assets/image/arrowpage.png"
+import Buttons from "../atom/Buttons";
 import { useState } from "react";
 
 const Isikategori = () => {
@@ -22,6 +23,11 @@ const Isikategori = () => {
           ...prev,
           [key]: !prev[key],
         }));
+      };
+
+      const [isMenuOpen, setIsMenuOpen] = useState(false);
+      const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
       };
     return (
         <>
@@ -136,10 +142,17 @@ const Isikategori = () => {
             <div className="box-isikategori">
                 {/* bagian pencarian */}
                 <div className="box-pencarian">
-                    <button>Urutkan <img src={ImgArrowU} alt="" /></button>
-                    <div className="urutkan">
-                        
+                    <button type="button" onClick={toggleMenu}>Urutkan <img src={ImgArrowU} alt="" /></button>
+                    {isMenuOpen && (
+                        <div className="urutkan">
+                        <Buttons typebutton="button" kelastombol="btn-urutkan">Harga Rendah</Buttons>
+                        <Buttons typebutton="button" kelastombol="btn-urutkan">Harga Tinggi</Buttons>
+                        <Buttons typebutton="button" kelastombol="btn-urutkan">A to Z</Buttons>
+                        <Buttons typebutton="button" kelastombol="btn-urutkan">Z to A</Buttons>
+                        <Buttons typebutton="button" kelastombol="btn-urutkan">Ratting Tertinggi</Buttons>
+                        <Buttons typebutton="button" kelastombol="btn-urutkan">Ratting Terendah</Buttons>
                     </div>
+                    )}
                     <input type="text" placeholder="Cari Kelas"/>
                     <img src={Imgsearch} alt="" />
                 </div>
