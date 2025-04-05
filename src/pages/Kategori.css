@@ -459,6 +459,10 @@ input[type="checkbox"]:checked::before {
     width: 50%;
   }
 
+  .urutkan{
+    right: 190px;
+  }
+
   .card-kelas{
     display: flex;
     flex-wrap: wrap;
