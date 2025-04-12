@@ -307,6 +307,7 @@
     background-color: #FFBD3A;
     color: #FFFFFF;
     border: none;
+    cursor: pointer;
   }
   .footer{
     background-color: #FFFFFF;
