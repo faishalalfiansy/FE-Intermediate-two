@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import Logol from "/src/assets/image/logoGoogle.png";
 import Bendera from "/src/assets/image/logoIndonesia.png"
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Formregister = () => {
   const navigate = useNavigate();
